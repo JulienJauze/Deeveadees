@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="deeveadees">
+    <head>
+        <title>Deeveadees</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="./js/angular.js"></script>
+        <script src="./js/deeveadees.js"></script>
+    </head>
+    <body ng-controller="listeDeFilms">
+
+        <!-- barre de navigation -->
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>                        
+                    </button>
+                    <a class="navbar-brand" href="./index.html">Deeveadees</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="./backoffice.html"><span class="glyphicon glyphicon-log-in"></span> Administration</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            
+            <!-- indicateur de position -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- images pour le slide -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img src="./images/dunkerk.jpg" alt="Image" class="img-carousel">
+                    <div class="carousel-caption">
+                        <h3></h3>
+                    </div>      
+                </div>
+                <div class="item">
+                    <img src="./images/arrival.jpg" alt="Image" class="img-carousel">
+                    <div class="carousel-caption">
+                        <h3></h3>
+                    </div>      
+                </div>
+                <div class="item">
+                    <img src="./images/ligue.jpg" alt="Image" class="img-carousel">
+                    <div class="carousel-caption">
+                        <h3></h3>      
+                    </div>      
+                </div>
+            </div>
+
+            <!-- controle fleche droite et gauche -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+        <div class="box"><h3 class="firsttitle">Nouveautés</h3></div>
+        <div class="container text-center">    
+            <div class="row">
+        
+                <div ng-repeat="film in Films" class="col-sm-4">
+                    <p class="title"> {{film.titre}} </p>
+                    <img src="{{film.jaquette}}" class="img-responsive" style="width:100%" alt="Image">
+                    <a href="./details.html" class="btn btn-primary btn-block">Voir la Fiche</a>
+                </div>
+<!--                <div class="col-sm-4"> 
+                    <p class="title">- MadMax -</p>    
+                    <img src="./images/madmax.jpg" class="img-responsive" style="width:100%" alt="Image">
+                    <a href="./details.html" class="btn btn-primary btn-block">Voir la Fiche</a>
+                </div>
+                <div class="col-sm-4"> 
+                    <p class="title">- Jurassic Park -</p>  
+                    <img src="./images/Jurassicpark.jpg" class="img-responsive" style="width:100%" alt="Image">
+                    <a href="./details.html" class="btn btn-primary btn-block">Voir la Fiche</a>
+                </div>
+                <div class="col-sm-4"> 
+                    <p class="title">- Independance Day -</p>  
+                    <img src="./images/independanceday.jpg" class="img-responsive" style="width:100%" alt="Image">
+                    <a href="#" class="btn btn-primary btn-block">Voir la Fiche</a>
+                </div>
+                <div class="col-sm-4"> 
+                    <p class="title">- Seul sur Mars -</p>  
+                    <img src="./images/mars.jpg" class="img-responsive" style="width:100%" alt="Image">
+                    <a href="#" class="btn btn-primary btn-block">Voir la Fiche</a>
+                </div>
+                <div class="col-sm-4"> 
+                    <p class="title">- Braveheart -</p>  
+                    <img src="./images/braveheart.jpg" class="img-responsive" style="width:100%" alt="Image">
+                    <a href="#" class="btn btn-primary btn-block">Voir la Fiche</a>
+                </div>-->
+            </div>
+<!--            <div id="content"></div>
+            <div id="content2"></div>-->
+<a ng-click="detail()" class="btn btn-primary btn-block">ouvrir la modale</a>
+        </div>
+
+<div ng-show="modalShower" class="modal-dialog" role="document" style="position: fixed !important; top: 10px !important; left:300px !important">
+                       <div class="modal-content">
+                           <div class="modal-body">
+                               <div class="form-group">
+                                   <label for="recipient-name" class="col-form-label"><b>Titre :</b></label>
+                                   <input type="text" class="form-control" >
+                               </div>
+                               <div class="form-group">
+                                   <label for="recipient-name" class="col-form-label"><b>Catégorie :</b></label>
+                                   <input type="text" class="form-control" id="nomEntree">
+                               </div>
+                               <div class="form-group">
+                                   <label for="recipient-name" class="col-form-label"><b>Réalisateur :</b></label>
+                                   <input type="text" class="form-control" id="nomPlat" placeholder="Nom">
+                               </div>
+                               <div class="form-group">
+                                   <label for="recipient-name" class="col-form-label"><b>Jaquette :</b></label>
+                                   <input type="text" class="form-control" id="nomDessert" placeholder="uniquement via URL">
+                               </div>
+                               <div class="form-group">
+                                   <label for="recipient-name" class="col-form-label"><b>Description :</b></label><br>
+                                   <textarea></textarea>
+                               </div>
+                           </div>
+                           <div class="modal-footer">
+                               <button ng-click="hideModal()" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                               <button type="button" class="btn btn-secondary" onclick='addMenu()'>Ajouter</button>
+                           </div>
+                       </div>
+                   </div>
+
+        
+        <footer class="container-fluid text-center">
+            <p>© beweb / contact / politique de confidentialité</p>
+        </footer>
+
+<!--    <script src="./script.js"></script>-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!--    <script src="./js/database.js"></script>
+    <script src="./js/application.js"></script>-->
+    </body>
+</html>
+

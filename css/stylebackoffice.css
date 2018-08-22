@@ -1,0 +1,36 @@
+body{
+    background-color: #333333 !important;
+}
+
+.navbar {
+    margin-bottom: 0 !important;
+    border-radius: 0;
+}
+
+.table{
+    
+    background-color: #cccccc !important;
+    width: 100% !important;
+}
+.btn-primary{
+    width: 60% !important;
+}
+.btn-danger{
+    width: 60% !important;
+}
+.title{
+    color: white !important;
+}
+.container{
+    margin-bottom: 30px;
+}
+.valider{
+    margin-top: 32px;
+}
+
+footer{
+    background-color: #666666 !important;
+    color: #242424;
+    padding: 20px;
+
+}

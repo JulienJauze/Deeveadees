@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Titre</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" media="screen" href="./css/stylebackoffice.css" />
+        <link rel="stylesheet" type="text/css" media="screen" href="./css/styleForm.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+
+    </head>
+    <body>
+        <!-- barre de navigation -->
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>                        
+                    </button>
+                    <a class="navbar-brand" href="./index.html">Deeveadees</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <!--        <li><a href="#">Acceuil</a></li>-->
+                    </ul>                
+                </div>
+            </div>
+        </nav>
+
+        <!-- formulaire ajout de film -->
+        <div class="container">   
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label class="title">Titre</label>
+                    <input type="text" class="form-control" id="titre" placeholder="Titre du Film">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label class="title">Jaquette</label>
+                    <input type="text" class="form-control" id="jaquette" placeholder="Image du Film">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="valider">
+                    <button class="btn btn-default submit" id="envoi" onclick="addFilm()">Ajouter</button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- tableau de films -->
+        <div class="container" id="contenu"></div>
+        
+        <!-- modal -->
+        <div class="container">       
+            <!-- activer la modal par le boutton -->
+            <button id="myBtn" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Modifier</button>
+            <!-- creation de la modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- contenu de la modal-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">x</button>
+                            <h4 class="modal-title">Modification du Film</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label>Titre</label>
+                                    <input type="text" class="form-control" placeholder="Modifier le Titre">
+                                </div>
+                                <div class="form-group">
+                                    <label>Jaquette</label>
+                                    <input type="text" class="form-control"  placeholder="Modifier la Jaquette">
+                                </div>               
+                                <button type="submit" class="btn btn-default">Valider</button>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+         <footer class="container-fluid text-center">
+            <p>© beweb / contact / politique de confidentialité</p>
+        </footer>
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
+        <script src="./js/backoffice.js"></script>
+
+    </body>
+</html>

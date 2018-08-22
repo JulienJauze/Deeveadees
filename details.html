@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" media="screen" href="./css/styleDetails.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style>
+            /* Remove the navbar's default margin-bottom and rounded borders */ 
+            .navbar {
+                margin-bottom: 0;
+                border-radius: 0;
+            }
+
+            /* Add a gray background color and some padding to the footer */
+            footer {
+                background-color: #f2f2f2;
+                padding: 25px;
+            }
+
+            .carousel-inner img {
+                width: 100%; /* Set width to 100% */
+                margin: auto;
+                min-height:100px;
+            }
+
+            /* Hide the carousel text when the screen is less than 600 pixels wide */
+            @media (max-width: 600px) {
+                .carousel-caption {
+                    display: none; 
+                }
+            }
+        </style>
+    </head>
+    <body>
+
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>                        
+                    </button>
+                    <a class="navbar-brand" href="./index.html">Deeveadees</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <!--        <li><a href="#">Acceuil</a></li>-->
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="backoffice.html"><span class="glyphicon glyphicon-log-in"></span> Administration</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img src="./images/die1.jpg" alt="Image" id="header" class="img-carousel">
+                    <div class="carousel-caption">
+                        <h3></h3>
+                    </div>      
+                </div>
+            </div>
+
+            <div class="container text-center">    
+                <h3>Saga Die Hard</h3>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="hovereffect">
+                            <img src="./images/cristal.jpg" class="img-responsive" id="miniature1" style="width:100%" alt="Image">
+                            <div class="overlay">
+                                <h2 id="subtitle1">Piège de Cristal</h2>
+                                <a class="info" href="https://fr.wikipedia.org/wiki/Pi%C3%A8ge_de_cristal">Fiche du Film</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="hovereffect">
+                            <img src="./images/58.jpg" class="img-responsive" id="miniature2" style="width:100%" alt="Image">
+                            <div class="overlay">
+                                <h2 id="subtitle2">58 Minutes pour Vivre</h2>
+                                <a class="info" href="https://fr.wikipedia.org/wiki/Die_Hard_2_:_58_minutes_pour_vivre">Fiche du Film</a>
+                            </div>
+                        </div>   
+                    </div>
+                    <div class="col-sm-4"> 
+                        <div class="hovereffect">
+                            <img src="./images/enfer.jpg" class="img-responsive" id="miniature3" style="width:100%" alt="Image">
+                            <div class="overlay">
+                                <h2 id="subtitle3">Une Journée en Enfer</h2>
+                                <a class="info" href="https://fr.wikipedia.org/wiki/Une_journ%C3%A9e_en_enfer">Fiche du Film</a>
+                            </div>
+                        </div>   
+                    </div>
+                    <div class="col-sm-12">
+                        <h3 class="title">Synopsis</h3>
+                        <div class="well">
+                            <p class="texte" id="descriptif">La saga met en vedette un policier, John McClane, qui n'a pas peur de recourir aux méthodes musclées pour mettre fin aux agissements criminels d'adversaires peu scrupuleux. En même temps, il vit des problèmes personnels qui minent sa vie professionnelle. Dans chacun des films, McClane est confronté à des terroristes nombreux, rusés, lourdement armés et impitoyables (en général, des anciens militaires reconvertis dans le banditisme). Tous les films se caractérisent par un dialogue direct (par téléphone) avec le chef des terroristes. Ces échanges ne manquent pas d'humour et marquent à chaque fois une gradation dans l'action. McClane affronte les terroristes et les tue toujours à lui seul, bénéficiant rarement d'aide extérieure et d'autres armes que son pistolet. Les films contiennent beaucoup de scènes d'action, le travail d'enquête progressant au fur et à mesure que les différents obstacles sont vaincus.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <footer class="container-fluid text-center">
+                <p>© beweb / contact / politique de confidentialité</p>
+            </footer>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!--        <script src="./js/database.js"></script>-->
+        <script src="./js/details.js"></script>
+    </body>
+</html>
